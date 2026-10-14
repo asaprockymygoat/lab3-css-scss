@@ -1,25 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин книг</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<header class="header">
-  <nav class="nav">
-    <a href="#">Главная</a>
-    <a href="#">О нас</a>
-    <a href="#">Работы</a>
-  </nav>
-</header>
+<body>
 
-<section class="hero">
-  <div class="container">
-    <h1>Мой Landing Page</h1>
-    <p>Добро пожаловать на мой сайт</p>
-    <button class="button">Узнать больше</button>
-  </div>
-</section>
+  <h1 class="page-title">Магазин книг</h1>
+  <p class="subtitle">Лучшие книги для настоящих ценителей</p>
 
-<section class="container">
-  <div class="work-card">
-    <h2>Моя работа</h2>
-    <p>Это карточка моего проекта.</p>
+  <div class="product-card">
+    <div class="product-card_image">
+      <img src="book.jpg" alt="Книга Оно Стивена Кинга">
+    </div>
+
+    <div class="product-card_content">
+      <h2 class="product-card_title">Оно</h2>
+      <h3 class="product-card_author">Стивен Кинг</h3>
+
+      <p class="product-card_description">
+        Роман «Оно» — захватывающая история о семерых
+        друзьях, которые сталкиваются с древним злом,
+        принявшим облик жуткого клоуна. Спустя годы
+        они возвращаются в родной город, чтобы
+        навсегда покончить с ним.
+      </p>
+
+      <p class="product-card_genre">
+        Жанр: ужасы, триллер
+      </p>
+
+      <p class="product-card_year">
+        Год издания: 1986
+      </p>
+
+      <p class="product-card_price">850 сом</p>
+
+      <button class="product-card_button" type="button"
+        onclick="alert('Книга добавлена в корзину!')">
+        В корзину
+      </button>
+    </div>
   </div>
-</section>
+
+</body>
+</html>
+```
+
