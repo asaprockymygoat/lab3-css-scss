@@ -1,65 +1,113 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: $font-main;
-  font-size: $font-size-base;
-  line-height: 1.5;
   margin: 0;
+  padding: 40px 20px;
+  font-family: $font-main;
+  background: #f5f6fc;
+  color: $text;
 }
 
-.header {
+.page-title {
+  text-align: center;
+  font-size: 36px;
+  color: $primary;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: $secondary;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  display: flex;
+  gap: 30px;
   background: linear-gradient(135deg, $primary, $secondary);
-  padding: $padding;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 25px;
+  overflow: hidden;
 
-  .nav {
-    a {
-      transition: 0.3s;
+  &_image {
+    flex: 0 0 40%;
 
-      &:hover {
-        opacity: 0.8;
-      }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      max-height: 430px;
+      object-fit: cover;
+      border-radius: 12px;
     }
   }
-}
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: $padding;
-}
-
-.hero {
-  background: linear-gradient(135deg, $primary, $secondary);
-  padding: 50px $padding;
-
-  h1 {
-    font-size: 40px;
+  &_content {
+    flex: 1;
+    min-width: 0;
   }
 
-  p {
-    font-size: $font-size-base;
-    line-height: 1.5;
+  &_title {
+    font-size: 30px;
+    color: white;
+    margin: 0 0 5px;
+  }
+
+  &_author {
+    font-size: 20px;
+    font-weight: normal;
+    color: #eeeaff;
+    margin: 0 0 18px;
+  }
+
+  &_description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: white;
+  }
+
+  &_genre,
+  &_year {
+    font-size: 14px;
+    color: #f0edff;
+    margin: 10px 0;
+  }
+
+  &_price {
+    font-size: 26px;
+    font-weight: bold;
+    color: $accent;
+    margin: 20px 0;
+  }
+
+  &_button {
+    @include button($primary);
+    width: 100%;
   }
 }
 
-.work-card {
-  background: white;
-  @include card;
-  @include transition;
+@media (max-width: 600px) {
+  .product-card {
+    flex-direction: column;
+    padding: 18px;
 
-  &:hover {
-    transform: translateY(-10px);
+    &_image img {
+      height: 300px;
+      min-height: 0;
+    }
   }
-}
 
-.button {
-  background: $accent;
-  padding: 10px 20px;
-  border-radius: $border-radius;
-  transition: 0.3s;
-
-  &:hover {
-    opacity: 0.8;
+  .page-title {
+    font-size: 29px;
   }
 }
